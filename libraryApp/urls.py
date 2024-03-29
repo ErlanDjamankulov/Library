@@ -1,0 +1,33 @@
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+         path('publisher/', PublisherViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='publisher_list'),
+         path('publisher/<int:pk>/', PublisherViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='publisher_detail'),
+         path('language/', LanguageViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='language_list'),
+         path('language/<int:pk>/', LanguageViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='language_detail'),
+         path('genre/', GenreViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='genre_list'),
+         path('genre/<int:pk>/', GenreViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='genre_detail'),
+         path('book/', BookViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='book_list'),
+         path('book/<int:pk>/', BookViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='book_detail'),
+         path('author/', AuthorViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='author_list'),
+         path('author/<int:pk>/', AuthorViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='author_detail'),
+         path('bookphoto/', BookPhotoViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='bookphoto_list'),
+         path('bookphoto/<int:pk>/', BookPhotoViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='bookphoto_detail'),
+         path('authorphoto/', AuthorPhotoViewSets.as_view({'get': 'list', 'post': 'create'}),
+                name='authorphoto_list'),
+         path('authorphoto/<int:pk>/', AuthorPhotoViewSets.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+                name='authorphoto_detail'),
+]
